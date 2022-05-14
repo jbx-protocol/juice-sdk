@@ -23,6 +23,7 @@ npm install juice-sdk
    ```
 
 1. Create a JsonRpcProvider.
+   The example below uses the [ethers](https://docs.ethers.io/v5/) library.
 
    ```js
    import { JsonRpcProvider } from "@ethersproject/providers";
@@ -45,6 +46,10 @@ npm install juice-sdk
 ### Examples
 
 #### Get balance for a Juicebox project
+
+**Dependencies**:
+
+- [ethers](https://docs.ethers.io/v5)
 
 ```typescript
 import { JsonRpcProvider } from "@ethersproject/providers";
