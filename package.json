@@ -1,0 +1,20 @@
+{
+  "name": "juice-sdk",
+  "version": "0.0.1-alpha+001",
+  "repository": "git@github.com:aeolianeth/juice-sdk.git",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "postinstall": "generate-types",
+    "generate-types": "typechain --target=ethers-v5 './node_modules/@jbx-protocol/contracts-v2/deployments/mainnet/*.json' --out-dir='src/types/contracts'"
+  },
+  "devDependencies": {
+    "@typechain/ethers-v5": "^10.0.0",
+    "typechain": "^8.0.0",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "@jbx-protocol/contracts-v2": "^4.0.0"
+  }
+}
