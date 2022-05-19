@@ -70,7 +70,7 @@ import {
   JBSingleTokenPaymentTerminalStore,
   JBSplitsStore,
   JBTokenStore,
-} from "types/contracts";
+} from "./types/contracts";
 
 export const getJBETHPaymentTerminal = (provider: JsonRpcProvider) =>
   new Contract(JBETHPaymentTerminalAddress, JBETHPaymentTerminalABI, provider);
