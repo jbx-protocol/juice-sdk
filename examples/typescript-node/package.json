@@ -1,5 +1,5 @@
 {
-  "name": "typescript",
+  "name": "typescript-node",
   "version": "1.0.0",
   "description": "",
   "main": "balance.js",
@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "juice-sdk": "^0.0.6-alpha",
+    "juice-sdk": "^0.0.10-alpha"
+  },
+  "devDependencies": {
     "typescript": "^4.6.4"
   }
 }
