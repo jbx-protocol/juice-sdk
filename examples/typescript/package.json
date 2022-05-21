@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "juice-sdk": "^0.0.5-alpha",
+    "juice-sdk": "^0.0.6-alpha",
     "typescript": "^4.6.4"
   }
 }
