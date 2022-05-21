@@ -1,10 +1,11 @@
 {
   "include": ["src"],
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
+    "module": "ESNext",
     "lib": ["es2016", "dom"],
-    "outDir": "./dist",
-    "rootDir": "./src" /* assuming that your code live in ./src */,
+    "outDir": "./dist/esm/",
+    "rootDir": "./src",
     "moduleResolution": "node",
     "baseUrl": ".",
     "esModuleInterop": true,

@@ -1,12 +1,16 @@
 {
   "name": "juice-sdk",
-  "version": "0.0.6-alpha",
+  "version": "0.0.7-alpha",
   "repository": "git@github.com:aeolianeth/juice-sdk.git",
   "license": "MIT",
-  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "main": "dist/cjs/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "prebuild": "rm -Rf dist/",
+    "build": "npm run browser:build && npm run node:build",
+    "browser:build": "tsc --project ./tsconfig.browser.json",
+    "node:build": "tsc --project ./tsconfig.node.json",
     "dev": "tsc --watch",
     "generate-types": "typechain --target=ethers-v5 './node_modules/@jbx-protocol/contracts-v2/deployments/mainnet/*.json' --out-dir='src/types/contracts'"
   },
