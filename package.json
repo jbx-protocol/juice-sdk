@@ -1,6 +1,6 @@
 {
   "name": "juice-sdk",
-  "version": "0.0.5-alpha",
+  "version": "0.0.6-alpha",
   "repository": "git@github.com:aeolianeth/juice-sdk.git",
   "license": "MIT",
   "main": "dist/index.js",

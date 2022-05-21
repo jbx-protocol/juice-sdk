@@ -1,8 +1,8 @@
 {
   "include": ["src"],
   "compilerOptions": {
-    "target": "ESNEXT",
-    "module": "esnext",
+    "target": "es5",
+    "lib": ["es2016", "dom"],
     "outDir": "./dist",
     "rootDir": "./src" /* assuming that your code live in ./src */,
     "moduleResolution": "node",
