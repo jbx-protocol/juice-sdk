@@ -45,6 +45,8 @@ npm install juice-sdk
 
 ### Examples
 
+Inspect the `examples/` directory to learn how to use `juice-sdk` for your project.
+
 #### Get balance for a Juicebox project
 
 **Dependencies**:
