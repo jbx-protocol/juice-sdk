@@ -3,7 +3,6 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "commonjs",
-    "lib": ["es2016", "dom"],
     "outDir": "./dist/cjs/",
     "rootDir": "./src",
     "moduleResolution": "node",
