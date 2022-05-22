@@ -1,61 +1,19 @@
 import { JsonRpcProvider } from "@ethersproject/providers";
 import { Contract } from "@ethersproject/contracts";
-import {
-  abi as JBETHPaymentTerminalABI,
-  address as JBETHPaymentTerminalAddress,
-} from "@jbx-protocol/contracts-v2/deployments/mainnet/JBETHPaymentTerminal.json";
-import {
-  abi as JBSingleTokenPaymentTerminalStoreABI,
-  address as JBSingleTokenPaymentTerminalStoreAddress,
-} from "@jbx-protocol/contracts-v2/deployments/mainnet/JBSingleTokenPaymentTerminalStore.json";
-import {
-  abi as JBControllerABI,
-  address as JBControllerAddress,
-} from "@jbx-protocol/contracts-v2/deployments/mainnet/JBController.json";
-import {
-  abi as JBFundingCycleStoreABI,
-  address as JBFundingCycleStoreAddress,
-} from "@jbx-protocol/contracts-v2/deployments/mainnet/JBFundingCycleStore.json";
-import {
-  abi as JBSplitsStoreABI,
-  address as JBSplitsStoreAddress,
-} from "@jbx-protocol/contracts-v2/deployments/mainnet/JBSplitsStore.json";
-import {
-  abi as JBCurrenciesABI,
-  address as JBCurrenciesAddress,
-} from "@jbx-protocol/contracts-v2/deployments/mainnet/JBCurrencies.json";
-import {
-  abi as JBOperatorStoreABI,
-  address as JBOperatorStoreAddress,
-} from "@jbx-protocol/contracts-v2/deployments/mainnet/JBOperatorStore.json";
-import {
-  abi as JBTokenStoreABI,
-  address as JBTokenStoreAddress,
-} from "@jbx-protocol/contracts-v2/deployments/mainnet/JBTokenStore.json";
-import {
-  abi as JBDirectoryABI,
-  address as JBDirectoryAddress,
-} from "@jbx-protocol/contracts-v2/deployments/mainnet/JBDirectory.json";
-import {
-  abi as JBPricesABI,
-  address as JBPricesAddress,
-} from "@jbx-protocol/contracts-v2/deployments/mainnet/JBPrices.json";
-import {
-  abi as JBETHERC20ProjectPayerDeployerABI,
-  address as JBETHERC20ProjectPayerDeployerAddress,
-} from "@jbx-protocol/contracts-v2/deployments/mainnet/JBETHERC20ProjectPayerDeployer.json";
-import {
-  abi as JBProjectsABI,
-  address as JBProjectsAddress,
-} from "@jbx-protocol/contracts-v2/deployments/mainnet/JBProjects.json";
-import {
-  abi as JBETHERC20SplitsPayerDeployerABI,
-  address as JBETHERC20SplitsPayerDeployerAddress,
-} from "@jbx-protocol/contracts-v2/deployments/mainnet/JBETHERC20SplitsPayerDeployer.json";
-import {
-  abi as JBReconfigurationBufferBallotABI,
-  address as JBReconfigurationBufferBallotAddress,
-} from "@jbx-protocol/contracts-v2/deployments/mainnet/JBReconfigurationBufferBallot.json";
+import JBETHPaymentTerminalContract from "@jbx-protocol/contracts-v2/deployments/mainnet/JBETHPaymentTerminal.json";
+import JBSingleTokenPaymentTerminalStoreContract from "@jbx-protocol/contracts-v2/deployments/mainnet/JBSingleTokenPaymentTerminalStore.json";
+import JBControllerContract from "@jbx-protocol/contracts-v2/deployments/mainnet/JBController.json";
+import JBFundingCycleStoreContract from "@jbx-protocol/contracts-v2/deployments/mainnet/JBFundingCycleStore.json";
+import JBSplitsStoreContract from "@jbx-protocol/contracts-v2/deployments/mainnet/JBSplitsStore.json";
+import JBCurrenciesContract from "@jbx-protocol/contracts-v2/deployments/mainnet/JBCurrencies.json";
+import JBOperatorStoreContract from "@jbx-protocol/contracts-v2/deployments/mainnet/JBOperatorStore.json";
+import JBTokenStoreContract from "@jbx-protocol/contracts-v2/deployments/mainnet/JBTokenStore.json";
+import JBDirectoryContract from "@jbx-protocol/contracts-v2/deployments/mainnet/JBDirectory.json";
+import JBPricesContract from "@jbx-protocol/contracts-v2/deployments/mainnet/JBPrices.json";
+import JBETHERC20ProjectPayerDeployerContract from "@jbx-protocol/contracts-v2/deployments/mainnet/JBETHERC20ProjectPayerDeployer.json";
+import JBProjectsContract from "@jbx-protocol/contracts-v2/deployments/mainnet/JBProjects.json";
+import JBETHERC20SplitsPayerDeployerContract from "@jbx-protocol/contracts-v2/deployments/mainnet/JBETHERC20SplitsPayerDeployer.json";
+import JBReconfigurationBufferBallotContract from "@jbx-protocol/contracts-v2/deployments/mainnet/JBReconfigurationBufferBallot.json";
 import {
   JBController,
   JBCurrencies,
@@ -73,60 +31,88 @@ import {
 } from "./types/contracts";
 
 export const getJBETHPaymentTerminal = (provider: JsonRpcProvider) =>
-  new Contract(JBETHPaymentTerminalAddress, JBETHPaymentTerminalABI, provider);
+  new Contract(
+    JBETHPaymentTerminalContract.address,
+    JBETHPaymentTerminalContract.abi,
+    provider
+  );
 export const getJBSingleTokenPaymentTerminalStore = (
   provider: JsonRpcProvider
 ) =>
   new Contract(
-    JBSingleTokenPaymentTerminalStoreAddress,
-    JBSingleTokenPaymentTerminalStoreABI,
+    JBSingleTokenPaymentTerminalStoreContract.address,
+    JBSingleTokenPaymentTerminalStoreContract.abi,
     provider
   ) as JBSingleTokenPaymentTerminalStore;
 export const getJBController = (provider: JsonRpcProvider) =>
-  new Contract(JBControllerAddress, JBControllerABI, provider) as JBController;
+  new Contract(
+    JBControllerContract.address,
+    JBControllerContract.abi,
+    provider
+  ) as JBController;
 export const getJBFundingCycleStore = (provider: JsonRpcProvider) =>
   new Contract(
-    JBFundingCycleStoreAddress,
-    JBFundingCycleStoreABI,
+    JBFundingCycleStoreContract.address,
+    JBFundingCycleStoreContract.abi,
     provider
   ) as JBFundingCycleStore;
 export const getJBSplitsStore = (provider: JsonRpcProvider) =>
   new Contract(
-    JBSplitsStoreAddress,
-    JBSplitsStoreABI,
+    JBSplitsStoreContract.address,
+    JBSplitsStoreContract.abi,
     provider
   ) as JBSplitsStore;
 export const getJBCurrencies = (provider: JsonRpcProvider) =>
-  new Contract(JBCurrenciesAddress, JBCurrenciesABI, provider) as JBCurrencies;
+  new Contract(
+    JBCurrenciesContract.address,
+    JBCurrenciesContract.abi,
+    provider
+  ) as JBCurrencies;
 export const getJBOperatorStore = (provider: JsonRpcProvider) =>
   new Contract(
-    JBOperatorStoreAddress,
-    JBOperatorStoreABI,
+    JBOperatorStoreContract.address,
+    JBOperatorStoreContract.abi,
     provider
   ) as JBOperatorStore;
 export const getJBTokenStore = (provider: JsonRpcProvider) =>
-  new Contract(JBTokenStoreAddress, JBTokenStoreABI, provider) as JBTokenStore;
+  new Contract(
+    JBTokenStoreContract.address,
+    JBTokenStoreContract.abi,
+    provider
+  ) as JBTokenStore;
 export const getJBDirectory = (provider: JsonRpcProvider) =>
-  new Contract(JBDirectoryAddress, JBDirectoryABI, provider) as JBDirectory;
+  new Contract(
+    JBDirectoryContract.address,
+    JBDirectoryContract.abi,
+    provider
+  ) as JBDirectory;
 export const getJBPrices = (provider: JsonRpcProvider) =>
-  new Contract(JBPricesAddress, JBPricesABI, provider) as JBPrices;
+  new Contract(
+    JBPricesContract.address,
+    JBPricesContract.abi,
+    provider
+  ) as JBPrices;
 export const getJBETHERC20ProjectPayerDeployer = (provider: JsonRpcProvider) =>
   new Contract(
-    JBETHERC20ProjectPayerDeployerAddress,
-    JBETHERC20ProjectPayerDeployerABI,
+    JBETHERC20ProjectPayerDeployerContract.address,
+    JBETHERC20ProjectPayerDeployerContract.abi,
     provider
   ) as JBETHERC20ProjectPayerDeployer;
 export const getJBProjects = (provider: JsonRpcProvider) =>
-  new Contract(JBProjectsAddress, JBProjectsABI, provider) as JBProjects;
+  new Contract(
+    JBProjectsContract.address,
+    JBProjectsContract.abi,
+    provider
+  ) as JBProjects;
 export const getJBETHERC20SplitsPayerDeployer = (provider: JsonRpcProvider) =>
   new Contract(
-    JBETHERC20SplitsPayerDeployerAddress,
-    JBETHERC20SplitsPayerDeployerABI,
+    JBETHERC20SplitsPayerDeployerContract.address,
+    JBETHERC20SplitsPayerDeployerContract.abi,
     provider
   ) as JBETHERC20SplitsPayerDeployer;
 export const getJBReconfigurationBufferBallot = (provider: JsonRpcProvider) =>
   new Contract(
-    JBReconfigurationBufferBallotAddress,
-    JBReconfigurationBufferBallotABI,
+    JBReconfigurationBufferBallotContract.address,
+    JBReconfigurationBufferBallotContract.abi,
     provider
   ) as JBReconfigurationBufferBallot;
