@@ -6,7 +6,17 @@
 
 ## Overview
 
-`juice-sdk` aims to help you interact with the Juicebox V2 contracts easier using JavaScript.
+`juice-sdk` helps you interact with the Juicebox V2 contracts using JavaScript.
+
+Supports your favorite dev environment:
+
+- ✅ Node.js
+- ✅ Webpack
+- ✅ Rollup
+- ✅ Vite
+- ✅ Typescript
+
+Supports tree-shaking.
 
 ## Installation
 
@@ -47,36 +57,15 @@ npm install juice-sdk
 
 Inspect the `examples/` directory to learn how to use `juice-sdk` for your project.
 
-#### Get balance for a Juicebox project
+| Environment                    | Example                                                                                                          |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| node.js                        | [./examples/node](./examples/node)                                                                               |
+| node.js with Typescript        | [./examples/typescript-node](./examples/typescript-node)                                                         |
+| create-react-app (webpack)     | [./examples/node](./examples/create-react-app)                                                                   |
+| Vanilla JavaScript (with Vite) | [juice-tools/embed/project/balance](https://github.com/jbx-protocol/juice-tools/tree/main/embed/project/balance) |
+| Vue                            | Coming soon                                                                                                      |
+| Svelte                         | Coming soon                                                                                                      |
 
-**Dependencies**:
+## Development
 
-- [ethers](https://docs.ethers.io/v5)
-
-```typescript
-import { JsonRpcProvider } from "@ethersproject/providers";
-import {
-  getJBDirectory,
-  getJBSingleTokenPaymentTerminalStore,
-} from "juice-sdk";
-
-// 1. Create your JSON RPC provider with ethers.js
-const RPC_HOST = "https://mainnet.infura.io/v3/YOUR_INFURA_ID";
-const provider = new JsonRpcProvider(RPC_HOST);
-
-async function getBalance(projectId: string) {
-  // 2. Get a list of the project's terminals
-  const terminals = await getJBDirectory(provider).terminalsOf(projectId);
-  const primaryTerminal = terminals[0];
-
-  // 3. Get the balance of the projects' primary terminal.
-  const balance = await getJBSingleTokenPaymentTerminalStore(
-    provider
-  ).balanceOf(primaryTerminal, projectId);
-
-  console.log(balance);
-}
-
-// get the current balance for Juicebox project 2
-getBalance("2");
-```
+- [Build process](./doc/build-process.md)

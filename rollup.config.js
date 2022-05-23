@@ -7,5 +7,8 @@ export default {
     dir: "dist/esm/",
     format: "esm",
   },
-plugins: [json(), nodeResolve({ resolveOnly: [/^@jbx-protocol\/.*/] })],
+  plugins: [
+    json({ compact: true }),
+    nodeResolve({ resolveOnly: [/^@jbx-protocol\/.*/] }),
+  ],
 };
