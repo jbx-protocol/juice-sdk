@@ -9,6 +9,6 @@ export default {
   },
   plugins: [
     json({ compact: true }),
-    nodeResolve({ resolveOnly: [/^@jbx-protocol\/.*/] }),
+    nodeResolve({ resolveOnly: [/^@jbx-protocol\/.*$/] }),
   ],
 };

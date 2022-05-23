@@ -61,10 +61,10 @@ Inspect the `examples/` directory to learn how to use `juice-sdk` for your proje
 | ------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
 | node.js                        | [./examples/node](./examples/node)                                                                               |
 | node.js with Typescript        | [./examples/typescript-node](./examples/typescript-node)                                                         |
-| create-react-app (webpack)     | [./examples/node](./examples/create-react-app)                                                                   |
+| create-react-app (webpack)     | [./examples/create-react-app](./examples/create-react-app)                                                       |
+| Vue                            | [./examples/vue](./examples/vue)                                                                                 |
+| Svelte                         | [./examples/svelte](./examples/svelte)                                                                           |
 | Vanilla JavaScript (with Vite) | [juice-tools/embed/project/balance](https://github.com/jbx-protocol/juice-tools/tree/main/embed/project/balance) |
-| Vue                            | Coming soon                                                                                                      |
-| Svelte                         | Coming soon                                                                                                      |
 
 ## Development
 
