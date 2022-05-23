@@ -1,4 +1,4 @@
-import { Provider } from "@ethersproject/providers";
+import { Provider } from "@ethersproject/abstract-provider";
 import { Signer } from "@ethersproject/abstract-signer";
 
 type SignerOrProvider = Signer | Provider;
