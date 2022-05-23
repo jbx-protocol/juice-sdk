@@ -1,4 +1,11 @@
-import { JsonRpcProvider } from "@ethersproject/providers";
+import {
+  JsonRpcProvider,
+  JsonRpcSigner,
+  JsonRpcBatchProvider,
+} from "@ethersproject/providers";
+
+type SignerOrProvider = JsonRpcProvider | JsonRpcSigner | JsonRpcBatchProvider;
+
 import { Contract } from "@ethersproject/contracts";
 import {
   abi as JBETHPaymentTerminalABI,
@@ -72,61 +79,91 @@ import {
   JBTokenStore,
 } from "./types/contracts";
 
-export const getJBETHPaymentTerminal = (provider: JsonRpcProvider) =>
-  new Contract(JBETHPaymentTerminalAddress, JBETHPaymentTerminalABI, provider);
+export const getJBETHPaymentTerminal = (signerOrProvider: SignerOrProvider) =>
+  new Contract(
+    JBETHPaymentTerminalAddress,
+    JBETHPaymentTerminalABI,
+    signerOrProvider
+  );
 export const getJBSingleTokenPaymentTerminalStore = (
-  provider: JsonRpcProvider
+  signerOrProvider: SignerOrProvider
 ) =>
   new Contract(
     JBSingleTokenPaymentTerminalStoreAddress,
     JBSingleTokenPaymentTerminalStoreABI,
-    provider
+    signerOrProvider
   ) as JBSingleTokenPaymentTerminalStore;
-export const getJBController = (provider: JsonRpcProvider) =>
-  new Contract(JBControllerAddress, JBControllerABI, provider) as JBController;
-export const getJBFundingCycleStore = (provider: JsonRpcProvider) =>
+export const getJBController = (signerOrProvider: SignerOrProvider) =>
+  new Contract(
+    JBControllerAddress,
+    JBControllerABI,
+    signerOrProvider
+  ) as JBController;
+export const getJBFundingCycleStore = (signerOrProvider: SignerOrProvider) =>
   new Contract(
     JBFundingCycleStoreAddress,
     JBFundingCycleStoreABI,
-    provider
+    signerOrProvider
   ) as JBFundingCycleStore;
-export const getJBSplitsStore = (provider: JsonRpcProvider) =>
+export const getJBSplitsStore = (signerOrProvider: SignerOrProvider) =>
   new Contract(
     JBSplitsStoreAddress,
     JBSplitsStoreABI,
-    provider
+    signerOrProvider
   ) as JBSplitsStore;
-export const getJBCurrencies = (provider: JsonRpcProvider) =>
-  new Contract(JBCurrenciesAddress, JBCurrenciesABI, provider) as JBCurrencies;
-export const getJBOperatorStore = (provider: JsonRpcProvider) =>
+export const getJBCurrencies = (signerOrProvider: SignerOrProvider) =>
+  new Contract(
+    JBCurrenciesAddress,
+    JBCurrenciesABI,
+    signerOrProvider
+  ) as JBCurrencies;
+export const getJBOperatorStore = (signerOrProvider: SignerOrProvider) =>
   new Contract(
     JBOperatorStoreAddress,
     JBOperatorStoreABI,
-    provider
+    signerOrProvider
   ) as JBOperatorStore;
-export const getJBTokenStore = (provider: JsonRpcProvider) =>
-  new Contract(JBTokenStoreAddress, JBTokenStoreABI, provider) as JBTokenStore;
-export const getJBDirectory = (provider: JsonRpcProvider) =>
-  new Contract(JBDirectoryAddress, JBDirectoryABI, provider) as JBDirectory;
-export const getJBPrices = (provider: JsonRpcProvider) =>
-  new Contract(JBPricesAddress, JBPricesABI, provider) as JBPrices;
-export const getJBETHERC20ProjectPayerDeployer = (provider: JsonRpcProvider) =>
+export const getJBTokenStore = (signerOrProvider: SignerOrProvider) =>
+  new Contract(
+    JBTokenStoreAddress,
+    JBTokenStoreABI,
+    signerOrProvider
+  ) as JBTokenStore;
+export const getJBDirectory = (signerOrProvider: SignerOrProvider) =>
+  new Contract(
+    JBDirectoryAddress,
+    JBDirectoryABI,
+    signerOrProvider
+  ) as JBDirectory;
+export const getJBPrices = (signerOrProvider: SignerOrProvider) =>
+  new Contract(JBPricesAddress, JBPricesABI, signerOrProvider) as JBPrices;
+export const getJBETHERC20ProjectPayerDeployer = (
+  signerOrProvider: SignerOrProvider
+) =>
   new Contract(
     JBETHERC20ProjectPayerDeployerAddress,
     JBETHERC20ProjectPayerDeployerABI,
-    provider
+    signerOrProvider
   ) as JBETHERC20ProjectPayerDeployer;
-export const getJBProjects = (provider: JsonRpcProvider) =>
-  new Contract(JBProjectsAddress, JBProjectsABI, provider) as JBProjects;
-export const getJBETHERC20SplitsPayerDeployer = (provider: JsonRpcProvider) =>
+export const getJBProjects = (signerOrProvider: SignerOrProvider) =>
+  new Contract(
+    JBProjectsAddress,
+    JBProjectsABI,
+    signerOrProvider
+  ) as JBProjects;
+export const getJBETHERC20SplitsPayerDeployer = (
+  signerOrProvider: SignerOrProvider
+) =>
   new Contract(
     JBETHERC20SplitsPayerDeployerAddress,
     JBETHERC20SplitsPayerDeployerABI,
-    provider
+    signerOrProvider
   ) as JBETHERC20SplitsPayerDeployer;
-export const getJBReconfigurationBufferBallot = (provider: JsonRpcProvider) =>
+export const getJBReconfigurationBufferBallot = (
+  signerOrProvider: SignerOrProvider
+) =>
   new Contract(
     JBReconfigurationBufferBallotAddress,
     JBReconfigurationBufferBallotABI,
-    provider
+    signerOrProvider
   ) as JBReconfigurationBufferBallot;
