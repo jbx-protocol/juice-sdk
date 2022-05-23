@@ -11,12 +11,12 @@
 Supports your favorite dev environment:
 
 - ✅ Node.js
-- ✅ Webpack
-- ✅ Rollup
-- ✅ Vite
 - ✅ Typescript
+- ✅ Webpack (supports tree-shaking)
+- ✅ Rollup (supports tree-shaking)
+- ✅ Vite (supports tree-shaking)
 
-Supports tree-shaking.
+Check out the [examples](#examples) to get started 🚀.
 
 ## Installation
 
