@@ -1,6 +1,6 @@
 {
   "name": "juice-sdk",
-  "version": "0.0.15-alpha",
+  "version": "0.0.16-alpha",
   "repository": "git@github.com:aeolianeth/juice-sdk.git",
   "license": "MIT",
   "module": "./dist/esm/index.js",
@@ -16,8 +16,7 @@
     "postbrowser:build": "rollup -c rollup.config.js",
     "node:build": "tsc --project ./tsconfig.node.json",
     "dev": "tsc --watch",
-    "generate-types": "typechain --target=ethers-v5 './node_modules/@jbx-protocol/contracts-v2/deployments/mainnet/*.json' --out-dir='src/types/contracts'",
-    "postinstall": "npm run generate-types"
+    "generate-types": "typechain --target=ethers-v5 './node_modules/@jbx-protocol/contracts-v2/deployments/mainnet/*.json' --out-dir='src/types/contracts'"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^22.0.0",
