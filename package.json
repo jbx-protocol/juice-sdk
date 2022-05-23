@@ -1,5 +1,5 @@
 {
-  "name": "juice-sdk",
+  "name": "@juicebox/juice-sdk",
   "version": "0.0.14-alpha",
   "repository": "git@github.com:aeolianeth/juice-sdk.git",
   "license": "MIT",

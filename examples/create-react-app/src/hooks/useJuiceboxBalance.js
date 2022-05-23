@@ -7,7 +7,7 @@ import {
 } from "juice-sdk";
 
 const RPC_HOST =
-  "https://mainnet.infura.io/v3/c2838024e339438fbe8a31d6754efe8a";
+  "https://mainnet.infura.io/v3/YOUR_INFURA_ID";
 
 export default function useJuiceboxBalance({ projectId }) {
   const [loading, setLoading] = useState(false);

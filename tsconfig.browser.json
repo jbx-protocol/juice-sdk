@@ -28,5 +28,6 @@
     },
     "typeRoots": ["./types/ethers-contracts/"],
     "resolveJsonModule": true
-  }
+  },
+  "exclude": ["examples"]
 }
