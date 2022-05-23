@@ -1,10 +1,7 @@
-import {
-  JsonRpcProvider,
-  JsonRpcSigner,
-  JsonRpcBatchProvider,
-} from "@ethersproject/providers";
+import { Provider } from "@ethersproject/providers";
+import { Signer } from "@ethersproject/abstract-signer";
 
-type SignerOrProvider = JsonRpcProvider | JsonRpcSigner | JsonRpcBatchProvider;
+type SignerOrProvider = Signer | Provider;
 
 import { Contract } from "@ethersproject/contracts";
 import {
