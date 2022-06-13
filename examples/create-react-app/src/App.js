@@ -3,11 +3,14 @@ import "./App.css";
 import useJuiceboxBalance from "./hooks/useJuiceboxBalance";
 import { formatEther } from "ethers/lib/utils";
 
-const PROJECT_ID = 2;
+const PROJECT_ID = 1;
 
 function App() {
   const { data: balance } = useJuiceboxBalance({ projectId: PROJECT_ID });
-  const balanceETH = formatEther(balance);
+  console.log("here", balance);
+  const balanceETH = balance
+    ? parseFloat(formatEther(balance)).toFixed(4)
+    : "...";
 
   return (
     <div className="App">

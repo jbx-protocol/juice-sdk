@@ -54,12 +54,22 @@ export type JBSplitStructOutput = [
   allocator: string;
 };
 
+export type JBGroupedSplitsStruct = {
+  group: BigNumberish;
+  splits: JBSplitStruct[];
+};
+
+export type JBGroupedSplitsStructOutput = [BigNumber, JBSplitStructOutput[]] & {
+  group: BigNumber;
+  splits: JBSplitStructOutput[];
+};
+
 export interface JBSplitsStoreInterface extends utils.Interface {
   functions: {
     "directory()": FunctionFragment;
     "operatorStore()": FunctionFragment;
     "projects()": FunctionFragment;
-    "set(uint256,uint256,uint256,(bool,bool,uint256,uint256,address,uint256,address)[])": FunctionFragment;
+    "set(uint256,uint256,(uint256,(bool,bool,uint256,uint256,address,uint256,address)[])[])": FunctionFragment;
     "splitsOf(uint256,uint256,uint256)": FunctionFragment;
   };
 
@@ -80,7 +90,7 @@ export interface JBSplitsStoreInterface extends utils.Interface {
   encodeFunctionData(functionFragment: "projects", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "set",
-    values: [BigNumberish, BigNumberish, BigNumberish, JBSplitStruct[]]
+    values: [BigNumberish, BigNumberish, JBGroupedSplitsStruct[]]
   ): string;
   encodeFunctionData(
     functionFragment: "splitsOf",
@@ -162,8 +172,7 @@ export interface JBSplitsStore extends BaseContract {
     set(
       _projectId: BigNumberish,
       _domain: BigNumberish,
-      _group: BigNumberish,
-      _splits: JBSplitStruct[],
+      _groupedSplits: JBGroupedSplitsStruct[],
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
@@ -199,8 +208,7 @@ export interface JBSplitsStore extends BaseContract {
   set(
     _projectId: BigNumberish,
     _domain: BigNumberish,
-    _group: BigNumberish,
-    _splits: JBSplitStruct[],
+    _groupedSplits: JBGroupedSplitsStruct[],
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
@@ -236,8 +244,7 @@ export interface JBSplitsStore extends BaseContract {
     set(
       _projectId: BigNumberish,
       _domain: BigNumberish,
-      _group: BigNumberish,
-      _splits: JBSplitStruct[],
+      _groupedSplits: JBGroupedSplitsStruct[],
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -291,8 +298,7 @@ export interface JBSplitsStore extends BaseContract {
     set(
       _projectId: BigNumberish,
       _domain: BigNumberish,
-      _group: BigNumberish,
-      _splits: JBSplitStruct[],
+      _groupedSplits: JBGroupedSplitsStruct[],
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
@@ -329,8 +335,7 @@ export interface JBSplitsStore extends BaseContract {
     set(
       _projectId: BigNumberish,
       _domain: BigNumberish,
-      _group: BigNumberish,
-      _splits: JBSplitStruct[],
+      _groupedSplits: JBGroupedSplitsStruct[],
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 

@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "juice-sdk": "^0.0.13-alpha"
+    "juice-sdk": "^2.0.0-alpha"
   }
 }

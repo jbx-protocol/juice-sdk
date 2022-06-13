@@ -57,9 +57,13 @@ import {
   address as JBETHERC20SplitsPayerDeployerAddress,
 } from "@jbx-protocol/contracts-v2/deployments/mainnet/JBETHERC20SplitsPayerDeployer.json";
 import {
-  abi as JBReconfigurationBufferBallotABI,
-  address as JBReconfigurationBufferBallotAddress,
-} from "@jbx-protocol/contracts-v2/deployments/mainnet/JBReconfigurationBufferBallot.json";
+  abi as JB3DayReconfigurationBufferBallotABI,
+  address as JB3DayReconfigurationBufferBallotAddress,
+} from "@jbx-protocol/contracts-v2/deployments/mainnet/JB3DayReconfigurationBufferBallot.json";
+import {
+  abi as JB7DayReconfigurationBufferBallotABI,
+  address as JB7DayReconfigurationBufferBallotAddress,
+} from "@jbx-protocol/contracts-v2/deployments/mainnet/JB7DayReconfigurationBufferBallot.json";
 import {
   JBController,
   JBCurrencies,
@@ -70,7 +74,8 @@ import {
   JBOperatorStore,
   JBPrices,
   JBProjects,
-  JBReconfigurationBufferBallot,
+  JB3DayReconfigurationBufferBallot,
+  JB7DayReconfigurationBufferBallot,
   JBSingleTokenPaymentTerminalStore,
   JBSplitsStore,
   JBTokenStore,
@@ -156,11 +161,19 @@ export const getJBETHERC20SplitsPayerDeployer = (
     JBETHERC20SplitsPayerDeployerABI,
     signerOrProvider
   ) as JBETHERC20SplitsPayerDeployer;
-export const getJBReconfigurationBufferBallot = (
+export const getJB3DayReconfigurationBufferBallot = (
   signerOrProvider: SignerOrProvider
 ) =>
   new Contract(
-    JBReconfigurationBufferBallotAddress,
-    JBReconfigurationBufferBallotABI,
+    JB3DayReconfigurationBufferBallotAddress,
+    JB3DayReconfigurationBufferBallotABI,
     signerOrProvider
-  ) as JBReconfigurationBufferBallot;
+  ) as JB3DayReconfigurationBufferBallot;
+export const getJB7DayReconfigurationBufferBallot = (
+  signerOrProvider: SignerOrProvider
+) =>
+  new Contract(
+    JB7DayReconfigurationBufferBallotAddress,
+    JB7DayReconfigurationBufferBallotABI,
+    signerOrProvider
+  ) as JB7DayReconfigurationBufferBallot;
