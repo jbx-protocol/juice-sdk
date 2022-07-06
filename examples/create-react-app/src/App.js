@@ -7,7 +7,6 @@ const PROJECT_ID = 1;
 
 function App() {
   const { data: balance } = useJuiceboxBalance({ projectId: PROJECT_ID });
-  console.log("here", balance);
   const balanceETH = balance
     ? parseFloat(formatEther(balance)).toFixed(4)
     : "...";
