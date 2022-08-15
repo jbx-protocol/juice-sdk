@@ -8,5 +8,10 @@
   "private": true,
   "workspaces": [
     "./packages/*"
-  ]
+  ],
+  "scripts": {
+    "build:core": "yarn --cwd packages/core build",
+    "build:react": "yarn --cwd packages/react build",
+    "build": "yarn build:core && yarn build:react"
+  }
 }

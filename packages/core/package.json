@@ -12,7 +12,7 @@
   "types": "dist/cjs/index.d.ts",
   "scripts": {
     "prebuild": "rm -Rf dist/",
-    "build": "npm run browser:build && npm run node:build",
+    "build": "yarn browser:build && yarn node:build",
     "browser:build": "tsc --project ./tsconfig.browser.json",
     "postbrowser:build": "rollup -c rollup.config.js",
     "node:build": "tsc --project ./tsconfig.node.json",

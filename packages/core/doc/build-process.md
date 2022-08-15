@@ -4,7 +4,7 @@ juice-sdk is built to support commonjs (cjs) and ESModule (esm) environments.
 
 ## Compile the SDK
 
-Run `npm run build` to compile the SDK. This command executes the following steps:
+Run `yarn build` to compile the SDK. This command executes the following steps:
 
 1. Builds the cjs library by running `tsc` using `tsconfig.node.json`.
 1. Builds the esm library by running `tsc` using `tsconfig.browser.json`.
@@ -17,6 +17,6 @@ The juice-sdk build pipeline, visualized.
 
 ## Publish a new version
 
-1. Run `npm run build` to build the SDK.
+1. Run `yarn build` to build the SDK.
 2. Bump the npm version in accordance with Semver.
 3. Publish to npm using `npm publish`.
