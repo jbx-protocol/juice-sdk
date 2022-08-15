@@ -1,0 +1,18 @@
+{
+  "name": "typescript-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "balance.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "juice-sdk": "^2.0.0-alpha"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
