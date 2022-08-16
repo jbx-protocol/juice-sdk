@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
 import { useContext, useEffect } from 'react';
-import { getJBSplitsStore } from '@juice-sdk/core';
+import { getJBSplitsStore } from 'juice-sdk';
 import { Split, SplitGroup } from 'types/splits';
 import { ContractReadHookResponse, ProjectId } from 'types';
 

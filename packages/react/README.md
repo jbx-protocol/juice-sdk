@@ -1,22 +1,22 @@
-# @juice-sdk/react
+# juice-hooks
 
 🧃 A React Hooks library for the
 [Juicebox V2 protocol](https://github.com/jbx-protocol/juice-contracts-v2).
 
-Built on `@juice-sdk/core`.
+Built on `juice-sdk`.
 
 > ⚠️ This library is experimental and we provide no guarantees. Use at your own
 > risk.
 
 ## Overview
 
-`@juice-sdk/react` provides a selection of React Hooks to interact with the
+`juice-hooks` provides a selection of React Hooks to interact with the
 Juicebox V2 contracts.
 
 ## Installation
 
 ```bash
-npm install @juice-sdk/react
+npm install juice-hooks
 ```
 
 ## Usage
@@ -42,7 +42,7 @@ function App() {
 
 ```tsx
 // MyComponent.tsx
-import { useProjectOwner, useProjectMetadataContent } from '@juice-sdk/react';
+import { useProjectOwner, useProjectMetadataContent } from 'juice-hooks';
 
 export default function MyComponent() {
   const { data: owner } = useProjectOwner({ projectId: 2 });

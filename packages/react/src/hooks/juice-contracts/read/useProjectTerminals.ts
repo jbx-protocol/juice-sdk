@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { getJBDirectory } from '@juice-sdk/core';
+import { getJBDirectory } from 'juice-sdk';
 import { ContractReadHookResponse, ProjectId } from 'types';
 
 import { JuiceContext } from '../../../contexts/JuiceContext';

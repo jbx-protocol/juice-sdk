@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { getJBOperatorStore } from '@juice-sdk/core';
+import { getJBOperatorStore } from 'juice-sdk';
 import { ContractReadHookResponse, ProjectId } from 'types';
 
 import useProjectOwner from './useProjectOwner';

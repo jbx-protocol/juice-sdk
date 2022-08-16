@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { BigNumber } from '@ethersproject/bignumber';
-import { getJBController } from '@juice-sdk/core';
+import { getJBController } from 'juice-sdk';
 import { ContractReadHookResponse, ProjectId } from 'types';
 
 import { JuiceContext } from '../../../contexts/JuiceContext';

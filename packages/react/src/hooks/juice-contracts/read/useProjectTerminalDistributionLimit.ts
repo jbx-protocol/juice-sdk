@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { getJBController } from '@juice-sdk/core';
+import { getJBController } from 'juice-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
 import { ContractReadHookResponse, ProjectId } from 'types';
 

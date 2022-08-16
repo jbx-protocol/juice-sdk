@@ -2,7 +2,7 @@ import React, { useCallback, useContext } from 'react';
 import {
   getJBDirectory,
   getJBSingleTokenPaymentTerminalStore,
-} from '@juice-sdk/core';
+} from 'juice-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
 import { ContractReadHookResponse, ProjectId } from 'types';
 

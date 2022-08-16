@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { getJBSingleTokenPaymentTerminalStore } from '@juice-sdk/core';
+import { getJBSingleTokenPaymentTerminalStore } from 'juice-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
 import { ContractReadHookResponse, ProjectId } from 'types';
 
