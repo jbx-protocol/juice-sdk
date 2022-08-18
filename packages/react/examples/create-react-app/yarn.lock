@@ -6204,10 +6204,10 @@ jsonpointer@^5.0.0:
     array-includes "^3.1.5"
     object.assign "^4.1.3"
 
-juice-hooks@3.1.2-alpha:
-  version "3.1.2-alpha"
-  resolved "https://registry.yarnpkg.com/juice-hooks/-/juice-hooks-3.1.2-alpha.tgz#a82dd29c93c0691082ba7fa076295fd11a5f4cb8"
-  integrity sha512-sPA7s3zfhYamDyQZly85EfEa/6VifdNeDuVsec1K3B0cH0i9RKxbNBMQ3l7fGVgjgjCzlSDVXGzZMoi+UrLGUQ==
+juice-hooks@3.2.0-alpha:
+  version "3.2.0-alpha"
+  resolved "https://registry.yarnpkg.com/juice-hooks/-/juice-hooks-3.2.0-alpha.tgz#27c90ecfa7dab3f6526e1f346dd59df60b72b5d8"
+  integrity sha512-G4IJ0brvw8BypCHr8IucEpQKM7InUfSWh9HUudWIcvAV4IbsRyC0gYL4Wy68rvIoGF0NwIG6IJJucyroOMIq3Q==
   dependencies:
     juice-sdk "2.1.0-alpha"
 
