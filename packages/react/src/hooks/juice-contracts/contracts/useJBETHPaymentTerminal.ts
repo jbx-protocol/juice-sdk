@@ -4,7 +4,7 @@
 import { useContext } from 'react';
 import { getJBETHPaymentTerminal } from 'juice-sdk';
 
-import { JuiceContext } from '../../../contexts/JuiceContext';
+import { JuiceContext } from 'contexts/JuiceContext';
 
 export function useJBETHPaymentTerminal() {
   const { provider } = useContext(JuiceContext);

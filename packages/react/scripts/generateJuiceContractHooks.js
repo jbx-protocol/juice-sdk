@@ -26,7 +26,7 @@ const srcCodeFactory = contractName =>
 import { useContext } from 'react';
 import { get${contractName} } from 'juice-sdk';
 
-import { JuiceContext } from '../../../contexts/JuiceContext';
+import { JuiceContext } from 'contexts/JuiceContext';
 
 export function use${contractName}() {
   const { provider } = useContext(JuiceContext);

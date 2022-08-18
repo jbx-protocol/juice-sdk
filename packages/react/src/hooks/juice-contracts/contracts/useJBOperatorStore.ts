@@ -4,7 +4,7 @@
 import { useContext } from 'react';
 import { getJBOperatorStore } from 'juice-sdk';
 
-import { JuiceContext } from '../../../contexts/JuiceContext';
+import { JuiceContext } from 'contexts/JuiceContext';
 
 export function useJBOperatorStore() {
   const { provider } = useContext(JuiceContext);

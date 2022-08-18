@@ -4,7 +4,7 @@
 import { useContext } from 'react';
 import { getJBSplitsStore } from 'juice-sdk';
 
-import { JuiceContext } from '../../../contexts/JuiceContext';
+import { JuiceContext } from 'contexts/JuiceContext';
 
 export function useJBSplitsStore() {
   const { provider } = useContext(JuiceContext);

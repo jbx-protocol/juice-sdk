@@ -4,7 +4,7 @@
 import { useContext } from 'react';
 import { getJB7DayReconfigurationBufferBallot } from 'juice-sdk';
 
-import { JuiceContext } from '../../../contexts/JuiceContext';
+import { JuiceContext } from 'contexts/JuiceContext';
 
 export function useJB7DayReconfigurationBufferBallot() {
   const { provider } = useContext(JuiceContext);
