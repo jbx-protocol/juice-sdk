@@ -7,7 +7,9 @@ import { getJB7DayReconfigurationBufferBallot } from 'juice-sdk';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJB7DayReconfigurationBufferBallot() {
-  const { provider } = useContext(JuiceContext);
+  const { provider, networkName } = useContext(JuiceContext);
 
-  return getJB7DayReconfigurationBufferBallot(provider);
+  return getJB7DayReconfigurationBufferBallot(provider, {
+    network: networkName,
+  });
 }

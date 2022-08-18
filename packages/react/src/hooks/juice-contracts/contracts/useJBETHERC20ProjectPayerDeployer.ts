@@ -7,7 +7,7 @@ import { getJBETHERC20ProjectPayerDeployer } from 'juice-sdk';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBETHERC20ProjectPayerDeployer() {
-  const { provider } = useContext(JuiceContext);
+  const { provider, networkName } = useContext(JuiceContext);
 
-  return getJBETHERC20ProjectPayerDeployer(provider);
+  return getJBETHERC20ProjectPayerDeployer(provider, { network: networkName });
 }

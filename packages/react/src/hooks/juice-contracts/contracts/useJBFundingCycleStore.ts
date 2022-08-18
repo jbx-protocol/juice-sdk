@@ -7,7 +7,7 @@ import { getJBFundingCycleStore } from 'juice-sdk';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBFundingCycleStore() {
-  const { provider } = useContext(JuiceContext);
+  const { provider, networkName } = useContext(JuiceContext);
 
-  return getJBFundingCycleStore(provider);
+  return getJBFundingCycleStore(provider, { network: networkName });
 }

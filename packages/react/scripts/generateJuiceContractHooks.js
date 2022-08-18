@@ -29,9 +29,9 @@ import { get${contractName} } from 'juice-sdk';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function use${contractName}() {
-  const { provider } = useContext(JuiceContext);
+  const { provider, networkName } = useContext(JuiceContext);
 
-  return get${contractName}(provider);
+  return get${contractName}(provider, { network: networkName });
 }
 `;
 

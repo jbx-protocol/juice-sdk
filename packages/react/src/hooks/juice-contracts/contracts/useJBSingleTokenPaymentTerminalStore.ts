@@ -7,7 +7,9 @@ import { getJBSingleTokenPaymentTerminalStore } from 'juice-sdk';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBSingleTokenPaymentTerminalStore() {
-  const { provider } = useContext(JuiceContext);
+  const { provider, networkName } = useContext(JuiceContext);
 
-  return getJBSingleTokenPaymentTerminalStore(provider);
+  return getJBSingleTokenPaymentTerminalStore(provider, {
+    network: networkName,
+  });
 }

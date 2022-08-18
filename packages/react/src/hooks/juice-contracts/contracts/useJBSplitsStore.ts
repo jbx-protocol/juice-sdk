@@ -7,7 +7,7 @@ import { getJBSplitsStore } from 'juice-sdk';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBSplitsStore() {
-  const { provider } = useContext(JuiceContext);
+  const { provider, networkName } = useContext(JuiceContext);
 
-  return getJBSplitsStore(provider);
+  return getJBSplitsStore(provider, { network: networkName });
 }

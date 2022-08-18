@@ -1,6 +1,6 @@
 {
   "name": "juice-hooks",
-  "version": "3.1.2-alpha",
+  "version": "3.2.0-alpha",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -13,7 +13,7 @@
     "build": "tsc",
     "dev": "tsc -w",
     "prettier": "prettier src --write",
-    "generate-juice-contract-hooks": "node scripts/generateJuiceContractHooks.js"
+    "generate-juice-contract-hooks": "node scripts/generateJuiceContractHooks.js && prettier src/hooks/juice-contracts/contracts --write"
   },
   "author": "",
   "license": "ISC",

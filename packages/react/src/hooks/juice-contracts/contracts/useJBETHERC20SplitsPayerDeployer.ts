@@ -7,7 +7,7 @@ import { getJBETHERC20SplitsPayerDeployer } from 'juice-sdk';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBETHERC20SplitsPayerDeployer() {
-  const { provider } = useContext(JuiceContext);
+  const { provider, networkName } = useContext(JuiceContext);
 
-  return getJBETHERC20SplitsPayerDeployer(provider);
+  return getJBETHERC20SplitsPayerDeployer(provider, { network: networkName });
 }

@@ -7,7 +7,7 @@ import { getJBTokenStore } from 'juice-sdk';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBTokenStore() {
-  const { provider } = useContext(JuiceContext);
+  const { provider, networkName } = useContext(JuiceContext);
 
-  return getJBTokenStore(provider);
+  return getJBTokenStore(provider, { network: networkName });
 }

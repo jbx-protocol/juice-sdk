@@ -3,4 +3,5 @@ import { JsonRpcProvider } from '@ethersproject/providers';
 
 export const JuiceContext: React.Context<{
   provider?: JsonRpcProvider;
-}> = createContext({});
+  networkName?: 'rinkeby' | 'mainnet';
+}> = createContext({ networkName: 'mainnet' });

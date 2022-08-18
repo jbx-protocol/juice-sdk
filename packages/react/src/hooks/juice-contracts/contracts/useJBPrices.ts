@@ -7,7 +7,7 @@ import { getJBPrices } from 'juice-sdk';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBPrices() {
-  const { provider } = useContext(JuiceContext);
+  const { provider, networkName } = useContext(JuiceContext);
 
-  return getJBPrices(provider);
+  return getJBPrices(provider, { network: networkName });
 }

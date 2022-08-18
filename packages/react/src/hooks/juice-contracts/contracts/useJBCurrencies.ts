@@ -7,7 +7,7 @@ import { getJBCurrencies } from 'juice-sdk';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBCurrencies() {
-  const { provider } = useContext(JuiceContext);
+  const { provider, networkName } = useContext(JuiceContext);
 
-  return getJBCurrencies(provider);
+  return getJBCurrencies(provider, { network: networkName });
 }

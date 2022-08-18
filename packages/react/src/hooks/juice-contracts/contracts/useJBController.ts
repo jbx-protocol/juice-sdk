@@ -7,7 +7,7 @@ import { getJBController } from 'juice-sdk';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBController() {
-  const { provider } = useContext(JuiceContext);
+  const { provider, networkName } = useContext(JuiceContext);
 
-  return getJBController(provider);
+  return getJBController(provider, { network: networkName });
 }
