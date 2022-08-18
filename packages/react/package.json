@@ -1,6 +1,6 @@
 {
   "name": "juice-hooks",
-  "version": "3.1.0-alpha",
+  "version": "3.1.1-alpha",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -29,6 +29,6 @@
     "react": ">=18.1.0"
   },
   "dependencies": {
-    "juice-sdk": "2.0.3-alpha"
+    "juice-sdk": "2.1.0-alpha"
   }
 }
