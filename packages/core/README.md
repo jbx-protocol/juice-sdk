@@ -1,8 +1,10 @@
 # juice-sdk
 
-🧃 A JavaScript SDK for the [Juicebox V2 protocol](https://github.com/jbx-protocol/juice-contracts-v2).
+🧃 A JavaScript SDK for the
+[Juicebox V2 protocol](https://github.com/jbx-protocol/juice-contracts-v2).
 
-> ⚠️ This library is experimental and we provide no guarantees. Use at your own risk.
+> ⚠️ This library is experimental and we provide no guarantees. Use at your own
+> risk.
 
 ## Overview
 
@@ -29,14 +31,14 @@ npm install juice-sdk
 1. Import the factory function for a Juicebox contract.
 
    ```js
-   import { getJBDirectory } from "juice-sdk";
+   import { getJBDirectory } from 'juice-sdk';
    ```
 
-1. Create a JsonRpcProvider.
-   The example below uses the [ethers](https://docs.ethers.io/v5/) library.
+1. Create a JsonRpcProvider. The example below uses the
+   [ethers](https://docs.ethers.io/v5/) library.
 
    ```js
-   import { JsonRpcProvider } from "@ethersproject/providers";
+   import { JsonRpcProvider } from '@ethersproject/providers';
    // ...);
    const provider = new JsonRpcProvider(YOUR_GATEWAY_HOST_URL);
    ```
@@ -53,9 +55,20 @@ npm install juice-sdk
    const const terminals = await JBDirectory.terminalsOf(projectId);
    ```
 
+### Usage on Rinkeby
+
+Juicebox is deployed on Ethererum mainnet and the Rinkeby testnet. To use the
+Rinkeby contract addresses, set the `network` argument to `rinkeby` when loading
+the given contract:
+
+```js
+const JBDirectory = getJBDirectory(provider, { network: 'rinkeby' });
+```
+
 ### Examples
 
-Inspect the `examples/` directory to learn how to use `juice-sdk` for your project.
+Inspect the `examples/` directory to learn how to use `juice-sdk` for your
+project.
 
 | Environment                    | Example                                                                                                          |
 | ------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
