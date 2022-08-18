@@ -17,7 +17,8 @@
     "postbrowser:build": "rollup -c rollup.config.js",
     "node:build": "tsc --project ./tsconfig.node.json",
     "dev": "tsc --watch",
-    "generate-types": "typechain --target=ethers-v5 './node_modules/@jbx-protocol/contracts-v2/deployments/mainnet/*.json' --out-dir='src/types/contracts'"
+    "generate-types": "typechain --target=ethers-v5 './node_modules/@jbx-protocol/contracts-v2/deployments/mainnet/*.json' --out-dir='src/types/contracts'",
+    "generate-index": "node scripts/generateIndexFile.js && prettier src/index.ts --write"
   },
   "devDependencies": {
     "@jbx-protocol/contracts-v2": "8.0.1",
