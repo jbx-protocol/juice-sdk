@@ -38,7 +38,10 @@ const IMPORTS =
   '\n' +
   `import {
     ${CONTRACTS.join(',\n')}
-  } from './types/contracts';`;
+  } from './types/contracts';\n` +
+  `export {
+    ${CONTRACTS.join(',\n')}
+  } from './types/contracts';\n`;
 
 const HEAD = generateFileHead(IMPORTS);
 

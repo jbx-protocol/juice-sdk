@@ -81,6 +81,24 @@ import {
   JB3DayReconfigurationBufferBallot,
   JB7DayReconfigurationBufferBallot,
 } from './types/contracts';
+export {
+  JBETHPaymentTerminal,
+  JBSingleTokenPaymentTerminalStore,
+  JBController,
+  JBFundingCycleStore,
+  JBSplitsStore,
+  JBCurrencies,
+  JBOperatorStore,
+  JBTokenStore,
+  JBDirectory,
+  JBPrices,
+  JBETHERC20ProjectPayerDeployer,
+  JBProjects,
+  JBETHERC20SplitsPayerDeployer,
+  JB3DayReconfigurationBufferBallot,
+  JB7DayReconfigurationBufferBallot,
+} from './types/contracts';
+
 type SignerOrProvider = Signer | Provider;
 export const getJBETHPaymentTerminal = (signerOrProvider: SignerOrProvider) =>
   new Contract(

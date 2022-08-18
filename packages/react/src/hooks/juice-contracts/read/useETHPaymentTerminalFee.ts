@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react';
 import { getJBETHPaymentTerminal } from 'juice-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
-import { ContractReadHookResponse, ProjectId } from 'types';
+import { ContractReadHookResponse } from 'types';
 
 import { JuiceContext } from 'contexts/JuiceContext';
 import useContractReadState from 'hooks/state/useContractReadState';
