@@ -2,8 +2,8 @@ import { useContext, useEffect } from 'react';
 import { getJBProjects } from 'juice-sdk';
 import { ContractReadHookResponse, ProjectId } from 'types';
 
-import { JuiceContext } from 'contexts/JuiceContext';
-import useContractReadState from 'hooks/state/useContractReadState';
+import { JuiceContext } from '../../../contexts/JuiceContext';
+import { useContractReadState } from '../../../hooks/state/useContractReadState';
 
 type DataType = string;
 

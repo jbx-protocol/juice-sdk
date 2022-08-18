@@ -2,7 +2,7 @@ import { ContractReadHookResponse, ProjectId } from 'types';
 
 import { useJBTokenStore } from '../contracts/useJBTokenStore';
 import { JBTokenStore } from 'juice-sdk';
-import { useContractRead } from 'hooks/useContractRead';
+import { useContractRead } from '../../../hooks/useContractRead';
 
 type DataType = string;
 

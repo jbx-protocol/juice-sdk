@@ -4,7 +4,7 @@
 import { useContext } from 'react';
 import { getJBETHERC20SplitsPayerDeployer } from 'juice-sdk';
 
-import { JuiceContext } from 'contexts/JuiceContext';
+import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBETHERC20SplitsPayerDeployer() {
   const { provider } = useContext(JuiceContext);

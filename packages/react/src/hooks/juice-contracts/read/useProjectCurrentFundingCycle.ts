@@ -3,8 +3,8 @@ import { getJBController } from 'juice-sdk';
 import { FundingCycleData, FundingCycleMetadata } from 'types/fundingCycle';
 import { ContractReadHookResponse, ProjectId } from 'types';
 
-import { JuiceContext } from 'contexts/JuiceContext';
-import useContractReadState from 'hooks/state/useContractReadState';
+import { JuiceContext } from '../../../contexts/JuiceContext';
+import { useContractReadState } from '../../../hooks/state/useContractReadState';
 
 type DataType = {
   fundingCycleData: FundingCycleData;

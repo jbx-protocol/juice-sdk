@@ -3,8 +3,8 @@ import { getJBETHPaymentTerminal } from 'juice-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
 import { ContractReadHookResponse } from 'types';
 
-import { JuiceContext } from 'contexts/JuiceContext';
-import useContractReadState from 'hooks/state/useContractReadState';
+import { JuiceContext } from '../../../contexts/JuiceContext';
+import { useContractReadState } from '../../../hooks/state/useContractReadState';
 
 type DataType = BigNumber;
 

@@ -3,8 +3,8 @@ import { getJBOperatorStore } from 'juice-sdk';
 import { ContractReadHookResponse, ProjectId } from 'types';
 
 import useProjectOwner from './useProjectOwner';
-import { JuiceContext } from 'contexts/JuiceContext';
-import useContractReadState from 'hooks/state/useContractReadState';
+import { JuiceContext } from '../../../contexts/JuiceContext';
+import { useContractReadState } from '../../../hooks/state/useContractReadState';
 
 export enum V2OperatorPermission {
   'RECONFIGURE' = 1,

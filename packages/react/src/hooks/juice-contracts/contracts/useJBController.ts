@@ -4,7 +4,7 @@
 import { useContext } from 'react';
 import { getJBController } from 'juice-sdk';
 
-import { JuiceContext } from 'contexts/JuiceContext';
+import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBController() {
   const { provider } = useContext(JuiceContext);

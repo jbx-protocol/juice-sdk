@@ -12,7 +12,7 @@ export type ContractReadHookResponse<T> = {
   error: Error | undefined;
 };
 
-export default function useContractReadState<T>(
+export function useContractReadState<T>(
   defaultData?: T,
 ): ContractReadHookResponse<T> & {
   actions: HookStateActions<T>;

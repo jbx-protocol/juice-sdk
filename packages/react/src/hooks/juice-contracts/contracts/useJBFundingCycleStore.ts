@@ -4,7 +4,7 @@
 import { useContext } from 'react';
 import { getJBFundingCycleStore } from 'juice-sdk';
 
-import { JuiceContext } from 'contexts/JuiceContext';
+import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBFundingCycleStore() {
   const { provider } = useContext(JuiceContext);

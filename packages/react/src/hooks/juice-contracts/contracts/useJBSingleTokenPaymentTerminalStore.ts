@@ -4,7 +4,7 @@
 import { useContext } from 'react';
 import { getJBSingleTokenPaymentTerminalStore } from 'juice-sdk';
 
-import { JuiceContext } from 'contexts/JuiceContext';
+import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBSingleTokenPaymentTerminalStore() {
   const { provider } = useContext(JuiceContext);

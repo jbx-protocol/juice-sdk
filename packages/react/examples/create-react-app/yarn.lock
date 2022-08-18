@@ -6204,17 +6204,17 @@ jsonpointer@^5.0.0:
     array-includes "^3.1.5"
     object.assign "^4.1.3"
 
-juice-hooks@3.0.4-alpha:
-  version "3.0.4-alpha"
-  resolved "https://registry.yarnpkg.com/juice-hooks/-/juice-hooks-3.0.4-alpha.tgz#da23cb3e2f6cc9fc1b3c4e6e53d7b2416bbae5b9"
-  integrity sha512-XIZA/m0H9AcpH1UFt/MAGacvx167W1Gp4JTOwIWBmrA3hHkeVZdj09CNXpJ+X8KHH0W7HSubvmqd5DQlE8TLLw==
+juice-hooks@3.1.2-alpha:
+  version "3.1.2-alpha"
+  resolved "https://registry.yarnpkg.com/juice-hooks/-/juice-hooks-3.1.2-alpha.tgz#a82dd29c93c0691082ba7fa076295fd11a5f4cb8"
+  integrity sha512-sPA7s3zfhYamDyQZly85EfEa/6VifdNeDuVsec1K3B0cH0i9RKxbNBMQ3l7fGVgjgjCzlSDVXGzZMoi+UrLGUQ==
   dependencies:
-    juice-sdk "2.0.3-alpha"
+    juice-sdk "2.1.0-alpha"
 
-juice-sdk@2.0.3-alpha:
-  version "2.0.3-alpha"
-  resolved "https://registry.yarnpkg.com/juice-sdk/-/juice-sdk-2.0.3-alpha.tgz#4116c36476c353324b3fdc424145ed9f0bcc4dbf"
-  integrity sha512-moCSEnGxfiaGZg24WfqJeozJYhORoupHaIKUREDua70jwJl2/YCN41QE6s7TqP46KvX3+kkksMZOOUcacYFFBA==
+juice-sdk@2.1.0-alpha:
+  version "2.1.0-alpha"
+  resolved "https://registry.yarnpkg.com/juice-sdk/-/juice-sdk-2.1.0-alpha.tgz#bd2bf97f4c4c1b6ce3043acf94ce811c33fec686"
+  integrity sha512-KmYmYmMxLR6NEN4v8KnL22ghcc6dl9pndU00UmutY3NhkdIvrBx8gcVngfPaBa5wWTYThpzmK3iUjotZoh6pVA==
 
 kind-of@^6.0.2:
   version "6.0.3"

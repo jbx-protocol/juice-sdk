@@ -4,7 +4,7 @@
 import { useContext } from 'react';
 import { getJBProjects } from 'juice-sdk';
 
-import { JuiceContext } from 'contexts/JuiceContext';
+import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBProjects() {
   const { provider } = useContext(JuiceContext);
