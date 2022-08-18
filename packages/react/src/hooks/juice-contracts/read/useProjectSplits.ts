@@ -4,8 +4,8 @@ import { getJBSplitsStore } from 'juice-sdk';
 import { Split, SplitGroup } from 'types/splits';
 import { ContractReadHookResponse, ProjectId } from 'types';
 
-import useHookState from '../../useContractReadState';
-import { JuiceContext } from '../../../contexts/JuiceContext';
+import useContractReadState from 'hooks/state/useContractReadState';
+import { JuiceContext } from 'contexts/JuiceContext';
 
 type SplitResult = {
   percent: BigNumber;
@@ -46,7 +46,7 @@ export default function useProjectSplits({
     data,
     error,
     actions: { setLoading, setData, setError },
-  } = useHookState<DataType>();
+  } = useContractReadState<DataType>();
 
   useEffect(() => {
     if (!projectId || !splitGroup || !domain) return;

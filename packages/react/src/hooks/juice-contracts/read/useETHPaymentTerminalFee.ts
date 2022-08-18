@@ -3,29 +3,25 @@ import { getJBETHPaymentTerminal } from 'juice-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
 import { ContractReadHookResponse, ProjectId } from 'types';
 
-import { JuiceContext } from '../../../contexts/JuiceContext';
-import useHookState from '../../useContractReadState';
+import { JuiceContext } from 'contexts/JuiceContext';
+import useContractReadState from 'hooks/state/useContractReadState';
 
 type DataType = BigNumber;
 
-export default function useETHPaymentTerminalFee({
-  projectId,
-}: {
-  projectId: ProjectId;
-}): ContractReadHookResponse<DataType> {
+export default function useETHPaymentTerminalFee(): ContractReadHookResponse<DataType> {
   const { provider } = useContext(JuiceContext);
   const {
     loading,
     data,
     error,
     actions: { setLoading, setData, setError },
-  } = useHookState<DataType>();
+  } = useContractReadState<DataType>();
 
   useEffect(() => {
     setLoading(true);
 
     getJBETHPaymentTerminal(provider)
-      .functions.fee(projectId)
+      .fee()
       .then((fee: BigNumber) => {
         setLoading(false);
         setData(fee);
@@ -33,7 +29,7 @@ export default function useETHPaymentTerminalFee({
       .catch(e => {
         setError(e);
       });
-  }, [projectId, setLoading, setData, setError, provider]);
+  }, [setLoading, setData, setError, provider]);
 
   return { loading, data, error };
 }

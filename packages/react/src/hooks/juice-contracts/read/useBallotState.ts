@@ -2,8 +2,8 @@ import { useContext, useEffect } from 'react';
 import { getJBFundingCycleStore } from 'juice-sdk';
 import { ContractReadHookResponse, ProjectId } from 'types';
 
-import { JuiceContext } from '../../../contexts/JuiceContext';
-import useHookState from '../../useContractReadState';
+import { JuiceContext } from 'contexts/JuiceContext';
+import useContractReadState from 'hooks/state/useContractReadState';
 
 export enum BallotState {
   'Active' = 0,
@@ -24,7 +24,7 @@ export default function useBallotState({
     data,
     error,
     actions: { setLoading, setData, setError },
-  } = useHookState<DataType>();
+  } = useContractReadState<DataType>();
 
   useEffect(() => {
     setLoading(true);

@@ -3,8 +3,8 @@ import { getJBSingleTokenPaymentTerminalStore } from 'juice-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
 import { ContractReadHookResponse, ProjectId } from 'types';
 
-import { JuiceContext } from '../../../contexts/JuiceContext';
-import useHookState from '../../useContractReadState';
+import { JuiceContext } from 'contexts/JuiceContext';
+import useContractReadState from 'hooks/state/useContractReadState';
 import useWalletTotalTokenBalance from './useWalletTotalTokenBalance';
 
 type DataType = BigNumber;
@@ -24,7 +24,7 @@ export default function useTerminalCurrentReclaimableOverflow({
     data,
     error,
     actions: { setLoading, setData, setError },
-  } = useHookState<DataType>();
+  } = useContractReadState<DataType>();
 
   const { data: totalBalance, loading: totalBalanceLoading } =
     useWalletTotalTokenBalance({ walletAddress, projectId });

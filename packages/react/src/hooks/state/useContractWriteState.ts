@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { ContractReadHookResponse } from 'types';
 
 type HookStateActions<T> = {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
@@ -7,9 +6,15 @@ type HookStateActions<T> = {
   setError: React.Dispatch<React.SetStateAction<Error>>;
 };
 
-export default function useHookState<T>(
+export type ContractWriteHookResponse<T> = {
+  data: T | undefined;
+  loading: boolean;
+  error: Error | undefined;
+};
+
+export default function useContractWriteState<T>(
   defaultData?: T,
-): ContractReadHookResponse<T> & {
+): ContractWriteHookResponse<T> & {
   actions: HookStateActions<T>;
 } {
   const [loading, setLoading] = useState<boolean>(false);

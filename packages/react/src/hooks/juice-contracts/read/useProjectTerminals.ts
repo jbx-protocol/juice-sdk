@@ -2,8 +2,8 @@ import { useContext, useEffect } from 'react';
 import { getJBDirectory } from 'juice-sdk';
 import { ContractReadHookResponse, ProjectId } from 'types';
 
-import { JuiceContext } from '../../../contexts/JuiceContext';
-import useHookState from '../../useContractReadState';
+import { JuiceContext } from 'contexts/JuiceContext';
+import useContractReadState from 'hooks/state/useContractReadState';
 
 type DataType = string[];
 
@@ -18,7 +18,7 @@ export default function useProjectTerminals({
     data,
     error,
     actions: { setLoading, setData, setError },
-  } = useHookState<DataType>();
+  } = useContractReadState<DataType>();
 
   useEffect(() => {
     setLoading(true);
