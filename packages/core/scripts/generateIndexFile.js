@@ -31,9 +31,15 @@ type SignerOrProvider = Signer | Provider;`;
 const IMPORTS =
   CONTRACTS.map(
     contractName => `import {
-    abi as ${contractName}ABI,
-    address as ${contractName}Address,
-  } from '@jbx-protocol/contracts-v2/deployments/mainnet/${contractName}.json';`,
+  abi as ${contractName}ABI_mainnet,
+  address as ${contractName}Address_mainnet,
+} from '@jbx-protocol/contracts-v2/deployments/mainnet/${contractName}.json';`,
+  ).join('\n') +
+  CONTRACTS.map(
+    contractName => `import {
+    abi as ${contractName}ABI_rinkeby,
+    address as ${contractName}Address_rinkeby,
+  } from '@jbx-protocol/contracts-v2/deployments/rinkeby/${contractName}.json';`,
   ).join('\n') +
   '\n' +
   `import {
@@ -49,10 +55,10 @@ const contents =
   HEAD +
   '\n' +
   CONTRACTS.map(
-    contractName => `export const get${contractName} = (signerOrProvider: SignerOrProvider) =>
+    contractName => `export const get${contractName} = (signerOrProvider: SignerOrProvider, { network } : { network: 'mainnet' | 'rinkeby' } = { network: 'mainnet' }) =>
 new Contract(
-  ${contractName}Address,
-  ${contractName}ABI,
+  network === 'rinkeby' ? ${contractName}Address_rinkeby : ${contractName}Address_mainnet,
+  network === 'rinkeby' ? ${contractName}ABI_rinkeby : ${contractName}ABI_mainnet,
   signerOrProvider,
 ) as ${contractName};`,
   ).join('\n');

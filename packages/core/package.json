@@ -1,6 +1,6 @@
 {
   "name": "juice-sdk",
-  "version": "2.0.3-alpha",
+  "version": "2.0.4-alpha",
   "repository": "git@github.com:aeolianeth/juice-sdk.git",
   "license": "MIT",
   "module": "./dist/esm/index.js",
