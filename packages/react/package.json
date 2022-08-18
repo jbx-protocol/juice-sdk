@@ -12,7 +12,8 @@
     "prebuild": "rm -Rf lib/",
     "build": "tsc",
     "dev": "tsc -w",
-    "prettier": "prettier src --write"
+    "prettier": "prettier src --write",
+    "generate-juice-contract-hooks": "node scripts/generateJuiceContractHooks.js"
   },
   "author": "",
   "license": "ISC",

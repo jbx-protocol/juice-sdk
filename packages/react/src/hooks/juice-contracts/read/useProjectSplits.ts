@@ -4,7 +4,7 @@ import { getJBSplitsStore } from 'juice-sdk';
 import { Split, SplitGroup } from 'types/splits';
 import { ContractReadHookResponse, ProjectId } from 'types';
 
-import useHookState from '../../useHookState';
+import useHookState from '../../useContractReadState';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 
 type SplitResult = {

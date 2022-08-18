@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Contract } from '@ethersproject/contracts';
-import useHookState from '../useHookState';
+import useHookState from './useContractReadState';
 import { ContractReadHookResponse } from 'types';
 
 interface ContractReadArgs<C extends Contract> {

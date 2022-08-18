@@ -3,7 +3,7 @@ import { getJBFundingCycleStore } from 'juice-sdk';
 import { ContractReadHookResponse, ProjectId } from 'types';
 
 import { JuiceContext } from '../../../contexts/JuiceContext';
-import useHookState from '../../useHookState';
+import useHookState from '../../useContractReadState';
 
 export enum BallotState {
   'Active' = 0,

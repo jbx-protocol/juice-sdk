@@ -4,7 +4,7 @@ import { ContractReadHookResponse, ProjectId } from 'types';
 
 import useProjectOwner from './useProjectOwner';
 import { JuiceContext } from '../../../contexts/JuiceContext';
-import useHookState from '../../useHookState';
+import useHookState from '../../useContractReadState';
 
 export enum V2OperatorPermission {
   'RECONFIGURE' = 1,

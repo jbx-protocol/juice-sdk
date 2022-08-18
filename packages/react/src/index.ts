@@ -15,4 +15,6 @@ export { default as useUsedDistributionLimit } from './hooks/juice-contracts/rea
 export { default as useWalletTotalTokenBalance } from './hooks/juice-contracts/read/useWalletTotalTokenBalance';
 export { default as useWalletUnclaimedTokenBalance } from './hooks/juice-contracts/read/useWalletUnclaimedTokenBalance';
 
+export * from './hooks/juice-contracts/contracts';
+
 export { default as JuiceProvider } from './providers/JuiceProvider';

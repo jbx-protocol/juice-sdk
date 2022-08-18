@@ -4,7 +4,7 @@ import { getJBController } from 'juice-sdk';
 import { ContractReadHookResponse, ProjectId } from 'types';
 
 import { JuiceContext } from '../../../contexts/JuiceContext';
-import useHookState from '../../useHookState';
+import useHookState from '../../useContractReadState';
 
 type DataType = BigNumber;
 
