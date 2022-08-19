@@ -5,11 +5,11 @@
   "license": "MIT",
   "module": "./dist/esm/index.js",
   "main": "./dist/cjs/index.js",
-  "funding": "https://juicebox.money/#/p/juicebox",
+  "types": "./dist/cjs/index.d.ts",
   "files": [
     "/dist"
   ],
-  "types": "dist/cjs/index.d.ts",
+  "funding": "https://juicebox.money/p/peel",
   "scripts": {
     "prebuild": "rm -Rf dist/",
     "build": "yarn node:build && yarn browser:build",

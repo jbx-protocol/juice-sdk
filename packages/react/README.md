@@ -10,8 +10,8 @@ Built on `juice-sdk`.
 
 ## Overview
 
-`juice-hooks` provides a selection of React Hooks to interact with the
-Juicebox V2 contracts.
+`juice-hooks` provides a selection of React Hooks to interact with the Juicebox
+V2 contracts.
 
 ## Installation
 
