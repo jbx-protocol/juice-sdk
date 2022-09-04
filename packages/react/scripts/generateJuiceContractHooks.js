@@ -30,6 +30,7 @@ import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function use${contractName}() {
   const { provider, networkName } = useContext(JuiceContext);
+  if (!provider) return;
 
   return get${contractName}(provider, { network: networkName });
 }

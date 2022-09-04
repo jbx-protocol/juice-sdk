@@ -8,6 +8,7 @@ import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJB7DayReconfigurationBufferBallot() {
   const { provider, networkName } = useContext(JuiceContext);
+  if (!provider) return;
 
   return getJB7DayReconfigurationBufferBallot(provider, {
     network: networkName,

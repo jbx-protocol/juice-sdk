@@ -1,7 +1,9 @@
 import { createContext } from 'react';
-import { JsonRpcProvider } from '@ethersproject/providers';
+import { BaseProvider } from '@ethersproject/providers';
+
+type NetworkName = 'rinkeby' | 'mainnet';
 
 export const JuiceContext: React.Context<{
-  provider?: JsonRpcProvider;
-  networkName?: 'rinkeby' | 'mainnet';
-}> = createContext({ networkName: 'mainnet' });
+  provider?: BaseProvider;
+  networkName: NetworkName;
+}> = createContext({ networkName: 'mainnet' as NetworkName });

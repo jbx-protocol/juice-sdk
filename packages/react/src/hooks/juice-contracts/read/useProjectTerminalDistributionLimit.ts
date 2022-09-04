@@ -1,10 +1,9 @@
 import { useContext, useEffect } from 'react';
-import { getJBController } from 'juice-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
-import { ContractReadHookResponse, ProjectId } from 'types';
-
+import { ContractReadHookResponse, ProjectId } from '../../../types';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 import { useContractReadState } from '../../../hooks/state/useContractReadState';
+import { useJBController } from '../contracts/useJBController';
 
 export const ETH_TOKEN_ADDRESS = '0x000000000000000000000000000000000000eeee';
 
@@ -30,10 +29,14 @@ export default function useProjectTerminalDistributionLimit({
     actions: { setLoading, setData, setError },
   } = useContractReadState<DataType>();
 
+  const contract = useJBController();
+
   useEffect(() => {
+    if (!contract) return;
+
     setLoading(true);
 
-    getJBController(provider)
+    contract
       .distributionLimitOf(
         projectId,
         configuration,

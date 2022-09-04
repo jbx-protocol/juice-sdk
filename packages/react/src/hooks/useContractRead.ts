@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Contract } from '@ethersproject/contracts';
 import { useContractReadState } from './state/useContractReadState';
-import { ContractReadHookResponse } from 'types';
+import { ContractReadHookResponse } from '../types';
 
 interface ContractReadArgs<C extends Contract> {
   contract: C;
@@ -32,7 +32,7 @@ export function useContractRead<C extends Contract, D>({
       .catch(e => {
         setError(e);
       });
-  }, [setLoading, setData, setError, ...args]);
+  }, [setLoading, setData, setError, args]);
 
   return { loading, data, error };
 }

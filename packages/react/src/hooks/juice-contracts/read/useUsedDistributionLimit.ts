@@ -1,10 +1,9 @@
 import { useContext, useEffect } from 'react';
-import { getJBSingleTokenPaymentTerminalStore } from 'juice-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
-import { ContractReadHookResponse, ProjectId } from 'types';
-
+import { ContractReadHookResponse, ProjectId } from '../../../types';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 import { useContractReadState } from '../../../hooks/state/useContractReadState';
+import { useJBSingleTokenPaymentTerminalStore } from '../contracts/useJBSingleTokenPaymentTerminalStore';
 
 type DataType = BigNumber;
 
@@ -25,10 +24,14 @@ export default function useUsedDistributionLimit({
     actions: { setLoading, setData, setError },
   } = useContractReadState<DataType>();
 
+  const contract = useJBSingleTokenPaymentTerminalStore();
+
   useEffect(() => {
+    if (!contract) return;
+
     setLoading(true);
 
-    getJBSingleTokenPaymentTerminalStore(provider)
+    contract
       .usedDistributionLimitOf(terminalAddress, projectId, fundingCycleNumber)
       .then(usedDistributionLimit => {
         setLoading(false);

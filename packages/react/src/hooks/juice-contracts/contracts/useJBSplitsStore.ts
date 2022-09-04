@@ -8,6 +8,7 @@ import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBSplitsStore() {
   const { provider, networkName } = useContext(JuiceContext);
+  if (!provider) return;
 
   return getJBSplitsStore(provider, { network: networkName });
 }

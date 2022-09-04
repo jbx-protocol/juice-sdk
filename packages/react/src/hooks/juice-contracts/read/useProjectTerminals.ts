@@ -1,9 +1,8 @@
 import { useContext, useEffect } from 'react';
-import { getJBDirectory } from 'juice-sdk';
-import { ContractReadHookResponse, ProjectId } from 'types';
-
+import { ContractReadHookResponse, ProjectId } from '../../../types';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 import { useContractReadState } from '../../../hooks/state/useContractReadState';
+import { useJBDirectory } from '../contracts/useJBDirectory';
 
 type DataType = string[];
 
@@ -20,10 +19,14 @@ export default function useProjectTerminals({
     actions: { setLoading, setData, setError },
   } = useContractReadState<DataType>();
 
+  const contract = useJBDirectory();
+
   useEffect(() => {
+    if (!contract) return;
+
     setLoading(true);
 
-    getJBDirectory(provider)
+    contract
       .terminalsOf(projectId)
       .then(terminals => {
         setLoading(false);

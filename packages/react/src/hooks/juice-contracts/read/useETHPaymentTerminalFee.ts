@@ -1,10 +1,9 @@
 import { useContext, useEffect } from 'react';
-import { getJBETHPaymentTerminal } from 'juice-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
-import { ContractReadHookResponse } from 'types';
-
+import { ContractReadHookResponse } from '../../../types';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 import { useContractReadState } from '../../../hooks/state/useContractReadState';
+import { useJBETHPaymentTerminal } from '../contracts/useJBETHPaymentTerminal';
 
 type DataType = BigNumber;
 
@@ -17,10 +16,14 @@ export default function useETHPaymentTerminalFee(): ContractReadHookResponse<Dat
     actions: { setLoading, setData, setError },
   } = useContractReadState<DataType>();
 
+  const contract = useJBETHPaymentTerminal();
+
   useEffect(() => {
+    if (!contract) return;
+
     setLoading(true);
 
-    getJBETHPaymentTerminal(provider)
+    contract
       .fee()
       .then((fee: BigNumber) => {
         setLoading(false);

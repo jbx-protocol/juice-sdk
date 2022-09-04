@@ -8,6 +8,7 @@ import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBETHPaymentTerminal() {
   const { provider, networkName } = useContext(JuiceContext);
+  if (!provider) return;
 
   return getJBETHPaymentTerminal(provider, { network: networkName });
 }

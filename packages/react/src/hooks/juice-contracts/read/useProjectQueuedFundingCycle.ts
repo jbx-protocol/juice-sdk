@@ -1,10 +1,12 @@
 import { useContext, useEffect } from 'react';
-import { getJBController } from 'juice-sdk';
-import { FundingCycleData, FundingCycleMetadata } from 'types/fundingCycle';
-import { ContractReadHookResponse, ProjectId } from 'types';
-
+import {
+  FundingCycleData,
+  FundingCycleMetadata,
+} from '../../../types/fundingCycle';
+import { ContractReadHookResponse, ProjectId } from '../../../types';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 import { useContractReadState } from '../../../hooks/state/useContractReadState';
+import { useJBController } from '../contracts/useJBController';
 
 type DataType = {
   fundingCycleData: FundingCycleData;
@@ -24,10 +26,14 @@ export default function useProjectQueuedFundingCycle({
     actions: { setLoading, setData, setError },
   } = useContractReadState<DataType>();
 
+  const contract = useJBController();
+
   useEffect(() => {
+    if (!contract) return;
+
     setLoading(true);
 
-    getJBController(provider)
+    contract
       .queuedFundingCycleOf(projectId)
       .then(data => {
         setLoading(false);

@@ -8,6 +8,7 @@ import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBETHERC20ProjectPayerDeployer() {
   const { provider, networkName } = useContext(JuiceContext);
+  if (!provider) return;
 
   return getJBETHERC20ProjectPayerDeployer(provider, { network: networkName });
 }

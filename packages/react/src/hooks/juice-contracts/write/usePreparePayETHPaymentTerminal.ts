@@ -13,10 +13,16 @@ interface TransactionArgs {
   value: BigNumber;
 }
 
-export function usePreparePayETHPaymentTerminal(): (
+type TransactionFunction = (
   args: TransactionArgs,
-) => Promise<TransactionResponse> {
+) => Promise<TransactionResponse>;
+
+export function usePreparePayETHPaymentTerminal():
+  | TransactionFunction
+  | undefined {
   const contract = useJBETHPaymentTerminal();
+
+  if (!contract) return;
 
   const transaction = usePrepareContractWrite<JBETHPaymentTerminal>({
     contract,

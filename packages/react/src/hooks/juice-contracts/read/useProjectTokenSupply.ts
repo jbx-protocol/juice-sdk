@@ -1,10 +1,9 @@
 import { useContext, useEffect } from 'react';
-import { getJBTokenStore } from 'juice-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
-import { ContractReadHookResponse, ProjectId } from 'types';
-
+import { ContractReadHookResponse, ProjectId } from '../../../types';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 import { useContractReadState } from '../../../hooks/state/useContractReadState';
+import { useJBTokenStore } from '../contracts/useJBTokenStore';
 
 type DataType = BigNumber;
 
@@ -21,10 +20,14 @@ export default function useProjectTokenSupply({
     actions: { setLoading, setData, setError },
   } = useContractReadState<DataType>();
 
+  const contract = useJBTokenStore();
+
   useEffect(() => {
+    if (!contract) return;
+
     setLoading(true);
 
-    getJBTokenStore(provider)
+    contract
       .totalSupplyOf(projectId)
       .then(supply => {
         setLoading(false);

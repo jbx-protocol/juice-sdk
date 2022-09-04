@@ -8,6 +8,7 @@ import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBOperatorStore() {
   const { provider, networkName } = useContext(JuiceContext);
+  if (!provider) return;
 
   return getJBOperatorStore(provider, { network: networkName });
 }

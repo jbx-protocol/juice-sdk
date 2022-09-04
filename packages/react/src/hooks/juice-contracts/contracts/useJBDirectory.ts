@@ -8,6 +8,7 @@ import { JuiceContext } from '../../../contexts/JuiceContext';
 
 export function useJBDirectory() {
   const { provider, networkName } = useContext(JuiceContext);
+  if (!provider) return;
 
   return getJBDirectory(provider, { network: networkName });
 }

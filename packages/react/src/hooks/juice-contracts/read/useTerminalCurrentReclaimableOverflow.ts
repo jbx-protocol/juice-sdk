@@ -1,11 +1,10 @@
 import { useContext, useEffect } from 'react';
-import { getJBSingleTokenPaymentTerminalStore } from 'juice-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
-import { ContractReadHookResponse, ProjectId } from 'types';
-
+import { ContractReadHookResponse, ProjectId } from '../../../types';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 import { useContractReadState } from '../../../hooks/state/useContractReadState';
 import useWalletTotalTokenBalance from './useWalletTotalTokenBalance';
+import { useJBSingleTokenPaymentTerminalStore } from '../contracts/useJBSingleTokenPaymentTerminalStore';
 
 type DataType = BigNumber;
 
@@ -26,21 +25,24 @@ export default function useTerminalCurrentReclaimableOverflow({
     actions: { setLoading, setData, setError },
   } = useContractReadState<DataType>();
 
-  const { data: totalBalance, loading: totalBalanceLoading } =
-    useWalletTotalTokenBalance({ walletAddress, projectId });
+  const { data: totalBalance } = useWalletTotalTokenBalance({
+    walletAddress,
+    projectId,
+  });
+
+  const contract = useJBSingleTokenPaymentTerminalStore();
 
   useEffect(() => {
-    if (totalBalanceLoading) return;
+    if (!totalBalance || !contract) return;
 
     setLoading(true);
 
-    getJBSingleTokenPaymentTerminalStore(provider)
-      ['currentReclaimableOverflowOf(address,uint256,uint256,bool)'](
-        terminalAddress,
-        projectId,
-        totalBalance,
-        false, // _useTotalOverflow (just using 1 terminal for now)
-      )
+    contract['currentReclaimableOverflowOf(address,uint256,uint256,bool)'](
+      terminalAddress,
+      projectId,
+      totalBalance,
+      false, // _useTotalOverflow (just using 1 terminal for now)
+    )
       .then(overflow => {
         setLoading(false);
         setData(overflow);
@@ -57,7 +59,6 @@ export default function useTerminalCurrentReclaimableOverflow({
     setError,
     provider,
     totalBalance,
-    totalBalanceLoading,
   ]);
 
   return { loading, data, error };

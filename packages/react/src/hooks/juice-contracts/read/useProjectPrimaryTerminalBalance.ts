@@ -1,13 +1,10 @@
 import React, { useCallback, useContext } from 'react';
-import {
-  getJBDirectory,
-  getJBSingleTokenPaymentTerminalStore,
-} from 'juice-sdk';
 import { BigNumber } from '@ethersproject/bignumber';
-import { ContractReadHookResponse, ProjectId } from 'types';
-
+import { ContractReadHookResponse, ProjectId } from '../../../types';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 import { useContractReadState } from '../../../hooks/state/useContractReadState';
+import { useJBSingleTokenPaymentTerminalStore } from '../contracts/useJBSingleTokenPaymentTerminalStore';
+import { useJBDirectory } from '../contracts/useJBDirectory';
 
 type DataType = BigNumber;
 
@@ -25,14 +22,21 @@ export default function useProjectPrimaryTerminalBalance({
     actions: { setLoading, setData, setError },
   } = useContractReadState<DataType>();
 
+  const JBDirectory = useJBDirectory();
+  const JBSingleTokenPaymentTerminalStore =
+    useJBSingleTokenPaymentTerminalStore();
+
   const getBalance = useCallback(
     async (projectId: ProjectId) => {
-      const terminals = await getJBDirectory(provider).terminalsOf(projectId);
+      if (!(JBDirectory && JBSingleTokenPaymentTerminalStore)) return;
+
+      const terminals = await JBDirectory.terminalsOf(projectId);
       const primaryTerminal = terminals[0];
 
-      const balance = await getJBSingleTokenPaymentTerminalStore(
-        provider,
-      ).balanceOf(primaryTerminal, projectId);
+      const balance = await JBSingleTokenPaymentTerminalStore.balanceOf(
+        primaryTerminal,
+        projectId,
+      );
 
       return balance;
     },
