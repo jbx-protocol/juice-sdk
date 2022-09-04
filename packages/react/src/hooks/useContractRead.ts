@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Contract } from '@ethersproject/contracts';
 import { useContractReadState } from './state/useContractReadState';
 import { ContractReadHookResponse } from '../types';
+import { JsonRpcProvider } from '@ethersproject/providers';
 
 interface ContractReadArgs<C extends Contract> {
   contract: C;

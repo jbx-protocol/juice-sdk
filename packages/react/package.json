@@ -1,6 +1,6 @@
 {
   "name": "juice-hooks",
-  "version": "3.2.1-alpha",
+  "version": "3.2.2-alpha",
   "description": "",
   "module": "./lib/esm/index.js",
   "main": "./lib/cjs/index.js",

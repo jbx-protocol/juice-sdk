@@ -24,6 +24,8 @@ npm install juice-hooks
 1. Give your app `JuiceProvider` context.
 
 ```tsx
+import { JsonRpcProvider } from '@ethersproject/providers';
+
 const infuraKey = 'YOUR INFURA ID';
 export const rpcUrl = `https://mainnet.infura.io/v3/${infuraKey}`;
 
@@ -48,5 +50,22 @@ export default function MyComponent() {
   const { data: owner } = useProjectOwner({ projectId: 2 });
 
   return <span>Owner: {owner}</span>;
+}
+```
+
+### Usage on Rinkeby
+
+Juicebox is deployed on Ethererum mainnet and the Rinkeby testnet. To use the
+Rinkeby contract addresses, set the `networkName` name to `rinkeby` in your `JuiceProvider`:
+
+```tsx
+function App() {
+  const provider = new JsonRpcProvider(rpcUrl);
+
+  return (
+    <JuiceProvider provider={provider} networkName="rinkeby">
+      <YourApp />
+    </JuiceProvider>
+  );
 }
 ```
