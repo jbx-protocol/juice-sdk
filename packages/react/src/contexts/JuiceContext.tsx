@@ -6,12 +6,10 @@ type NetworkName = 'rinkeby' | 'mainnet';
 
 export interface JuiceContextData {
   provider?: BaseProvider;
-  networkName: NetworkName;
+  networkName?: NetworkName;
 }
 
-export const JuiceContext: React.Context<JuiceContextData> = createContext({
-  networkName: 'mainnet' as NetworkName,
-});
+export const JuiceContext: React.Context<JuiceContextData> = createContext({});
 
 export function JuiceProvider({
   provider,
