@@ -9,14 +9,13 @@ export interface JuiceContextData {
   networkName: NetworkName;
 }
 
-export const JuiceContext: React.Context<{
-  provider?: BaseProvider;
-  networkName: NetworkName;
-}> = createContext({ networkName: 'mainnet' as NetworkName });
+export const JuiceContext: React.Context<JuiceContextData> = createContext({
+  networkName: 'mainnet' as NetworkName,
+});
 
 export function JuiceProvider({
   provider,
-  networkName,
+  networkName = 'mainnet',
   children,
 }: PropsWithChildren<JuiceContextData>) {
   return (
