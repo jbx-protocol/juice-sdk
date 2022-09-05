@@ -1,11 +1,12 @@
 import { createContext, PropsWithChildren } from 'react';
-import { BaseProvider } from '@ethersproject/providers';
+import { Provider } from '@ethersproject/abstract-provider';
+import { Signer } from '@ethersproject/abstract-signer';
 import React from 'react';
 
 type NetworkName = 'rinkeby' | 'mainnet';
 
 export interface JuiceContextData {
-  provider?: BaseProvider;
+  provider?: Signer | Provider;
   networkName?: NetworkName;
 }
 

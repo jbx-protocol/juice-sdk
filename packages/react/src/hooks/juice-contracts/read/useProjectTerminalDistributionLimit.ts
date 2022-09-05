@@ -4,8 +4,7 @@ import { ContractReadHookResponse, ProjectId } from '../../../types';
 import { JuiceContext } from '../../../contexts/JuiceContext';
 import { useContractReadState } from '../../../hooks/state/useContractReadState';
 import { useJBController } from '../contracts/useJBController';
-
-export const ETH_TOKEN_ADDRESS = '0x000000000000000000000000000000000000eeee';
+import { ETH_TOKEN_ADDRESS } from '../../../constants/addresses';
 
 type DataType = {
   distributionLimit: BigNumber;

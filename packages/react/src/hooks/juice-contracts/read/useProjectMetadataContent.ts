@@ -10,7 +10,7 @@ export default function useProjectMetadataContent({
   projectId,
   domain,
 }: {
-  projectId: ProjectId;
+  projectId: ProjectId | undefined;
   domain: string;
 }): ContractReadHookResponse<DataType> {
   const { provider } = useContext(JuiceContext);
@@ -24,7 +24,7 @@ export default function useProjectMetadataContent({
   const contract = useJBProjects();
 
   useEffect(() => {
-    if (!contract) return;
+    if (!contract || !projectId) return;
 
     setLoading(true);
 
