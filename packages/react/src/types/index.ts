@@ -1,7 +1,4 @@
-export interface ContractReadHookResponse<T> {
-  data: T | undefined;
-  loading: boolean;
-  error: Error | undefined;
-}
-
-export type ProjectId = number;
+export * from './contractReadHookResponse';
+export * from './fundingCycle';
+export * from './projectId';
+export * from './splits';
