@@ -2,12 +2,11 @@ import { useEffect } from 'react';
 import { Contract } from '@ethersproject/contracts';
 import { useContractReadState } from './state/useContractReadState';
 import { ContractReadHookResponse } from '../types';
-import { JsonRpcProvider } from '@ethersproject/providers';
 
 interface ContractReadArgs<C extends Contract> {
   contract: C;
   functionName: keyof C['functions'];
-  args?: unknown[];
+  args?: unknown[]; // TODO find a way to type arguments based on the functionName
 }
 
 export function useContractRead<C extends Contract, D>({
